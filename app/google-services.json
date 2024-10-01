@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "535843401656",
+    "project_id": "app-didi-lanches",
+    "storage_bucket": "app-didi-lanches.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:535843401656:android:b6386cd41ac21b1e8b294d",
+        "android_client_info": {
+          "package_name": "com.example.app_didi_lanches"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQwSDvJI9Dn3NUMCvGxIYPGBeUQxGAHBY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
