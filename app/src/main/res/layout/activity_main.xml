@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="362.03dp"
+        android:layout_height="329dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/logo_didi_dark"
+        android:contentDescription="Logo Didi Lanches" />
+
+    <RelativeLayout
+        android:id="@+id/btn_entrar"
+        android:layout_width="153dp"
+        android:layout_height="49dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/botao_login">
+
+        <TextView
+            android:id="@+id/text_entrar"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="49dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="15dp"
+            android:text="@string/entrar"
+            android:textSize="14sp"
+            android:letterSpacing="0.02"
+            android:textColor="@color/yellow"
+            android:lineSpacingExtra="2sp"
+            android:gravity="center_vertical" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
