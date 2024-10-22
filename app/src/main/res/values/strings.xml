@@ -3,4 +3,14 @@
     <string name="entrar">ENTRAR</string>
     <string name="usuario">Usuário</string>
     <string name="senha">Senha</string>
+    <string name="logo_description">Logo Didi Lanches</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_hint">Email</string>
+    <string name="register_btn">Criar conta</string>
+    <string name="recover_btn">Esqueci minha senha</string>
+    <string name="recover_lbl">Recuperar conta\n</string>
+    <string name="register_lbl">Criar conta</string>
 </resources>
