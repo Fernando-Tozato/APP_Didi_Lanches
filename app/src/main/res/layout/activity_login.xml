@@ -1,63 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    android:padding="24dp">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="362.03dp"
-        android:layout_height="329dp"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="110dp"
+        android:contentDescription="@string/logo_description"
         android:src="@drawable/logo_didi_dark"
-        android:contentDescription="@string/logo_description" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/username_input"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/logo"
-        android:layout_marginTop="20dp"
-        android:hint="@string/username_hint"
-        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:autofillHints="username"
-        android:inputType="text"
-        android:textSize="20sp"
         android:background="@drawable/textfield_background"
-        android:textColorHint="@color/brown"
+        android:hint="@string/username_hint"
+        android:inputType="text"
+        android:padding="10dp"
         android:textColor="@color/brown"
-        android:padding="10dp"/>
+        android:textColorHint="@color/brown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
 
     <EditText
         android:id="@+id/password_input"
-        android:layout_width="200dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/username_input"
-        android:layout_marginTop="20dp"
-        android:hint="@string/password_hint"
-        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:autofillHints="password"
-        android:inputType="textPassword"
-        android:textSize="20sp"
         android:background="@drawable/textfield_background"
-        android:textColorHint="@color/brown"
+        android:hint="@string/password_hint"
+        android:inputType="textPassword"
+        android:padding="10dp"
         android:textColor="@color/brown"
-        android:padding="10dp"/>
+        android:textColorHint="@color/brown"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/username_input" />
 
     <Button
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
         android:layout_below="@id/password_input"
-        android:layout_marginTop="20dp"
         android:background="@drawable/btn_background"
         android:text="@string/entrar"
         android:textColor="#FEB403"
         android:textSize="20sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:paddingVertical="10dp"
+        android:paddingHorizontal="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_input" />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

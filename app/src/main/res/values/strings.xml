@@ -13,4 +13,9 @@
     <string name="recover_btn">Esqueci minha senha</string>
     <string name="recover_lbl">Recuperar conta\n</string>
     <string name="register_lbl">Criar conta</string>
+    <string name="inventory">Estoque</string>
+    <string name="new_categories">Criar categorias</string>
+    <string name="view_categories">Análise de categorias</string>
+    <string name="new_products">Inserção de produtos</string>
+    <string name="logout">Sair</string>
 </resources>
