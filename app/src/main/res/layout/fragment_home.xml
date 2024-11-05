@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:paddingVertical="15dp"
-            android:text="@string/inventory"
+            android:text="@string/inventory_btn"
             android:textColor="@color/yellow"
             android:textSize="15sp"
             android:textStyle="bold"
@@ -36,32 +36,18 @@
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <Button
-            android:id="@+id/btn_new_categories"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="32dp"
-            android:paddingVertical="15dp"
-            android:text="@string/new_categories"
-            android:textColor="@color/yellow"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_inventory" />
-
-        <Button
             android:id="@+id/btn_view_categories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:paddingVertical="15dp"
-            android:text="@string/view_categories"
+            android:text="@string/view_categories_btn"
             android:textColor="@color/yellow"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_new_categories"/>
+            app:layout_constraintTop_toBottomOf="@+id/btn_inventory"/>
 
         <Button
             android:id="@+id/btn_new_products"
@@ -69,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:paddingVertical="15dp"
-            android:text="@string/new_products"
+            android:text="@string/new_products_btn"
             android:textColor="@color/yellow"
             android:textSize="17sp"
             android:textStyle="bold"
@@ -78,18 +64,32 @@
             app:layout_constraintTop_toBottomOf="@+id/btn_view_categories" />
 
         <Button
+            android:id="@+id/btn_new_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:paddingVertical="15dp"
+            android:text="@string/new_category_btn"
+            android:textColor="@color/yellow"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_new_products" />
+
+        <Button
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:paddingVertical="15dp"
-            android:text="@string/logout"
+            android:text="@string/logout_btn"
             android:textColor="@color/yellow"
             android:textSize="17sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_new_products" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_new_category" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,28 +1,25 @@
 package com.example.app_didi_lanches.ui
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.app_didi_lanches.R
-import com.example.app_didi_lanches.databinding.FragmentSplashBinding
+import com.example.app_didi_lanches.databinding.FragmentNewProductBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 
-class SplashFragment : Fragment() {
+class NewProductFragment : Fragment() {
 
-    private var _binding: FragmentSplashBinding? = null
+    private var _binding: FragmentNewProductBinding? = null
     private val binding get() = _binding!!
 
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View {
-        _binding = FragmentSplashBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentNewProductBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -31,14 +28,12 @@ class SplashFragment : Fragment() {
 
         auth = Firebase.auth
 
-        Handler(Looper.getMainLooper()).postDelayed(this::checkAuth, 3000)
+        initClicks()
     }
 
-    private fun checkAuth() {
-        if(auth.currentUser == null) {
-            findNavController().navigate(R.id.action_splashFragment_to_authentication)
-        } else {
-            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+    private fun initClicks() {
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

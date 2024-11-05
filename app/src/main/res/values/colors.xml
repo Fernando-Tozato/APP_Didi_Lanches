@@ -3,5 +3,26 @@
     <color name="yellow">#FEB403</color>
     <color name="black">#000000</color>
     <color name="white">#FFFFFF</color>
+    <color name="gray">#E6E0E9</color>
     <color name="brown">#500800</color>
+
+    <!--  Category selection  -->
+    <color name="category01">#F5F5DC</color>
+    <color name="category02">#D2B48C</color>
+    <color name="category03">#C68A3C</color>
+    <color name="category04">#D19A6A</color>
+    <color name="category05">#704214</color>
+    <color name="category06">#7B3F00</color>
+    <color name="category07">#C7513A</color>
+    <color name="category08">#7E3B3A</color>
+    <color name="category09">#E27D60</color>
+    <color name="category10">#556B2F</color>
+    <color name="category11">#228B22</color>
+    <color name="category12">#8B8B00</color>
+    <color name="category13">#6A7B8A</color>
+    <color name="category14">#3A5B7F</color>
+    <color name="category15">#5B7F91</color>
+    <color name="category16">#5C4D83</color>
+    <color name="category17">#7E5B9D</color>
+    <color name="category18">#6A4C93</color>
 </resources>

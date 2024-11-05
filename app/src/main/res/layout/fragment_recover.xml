@@ -12,28 +12,60 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBarLayout"
+            android:id="@+id/AppBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/yellow"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/yellow">
 
-            <androidx.appcompat.widget.Toolbar
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/back_btn_description"
+                    android:paddingHorizontal="8dp"
+                    android:src="@drawable/ic_arrow_back"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/brown" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
+                    android:layout_marginVertical="8dp"
                     android:text="@string/recover_lbl"
                     android:textColor="@color/brown"
                     android:textSize="25sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnMenu"
+                    app:layout_constraintStart_toEndOf="@+id/btnBack"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            </androidx.appcompat.widget.Toolbar>
+                <ImageButton
+                    android:id="@+id/btnMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/menu_btn_description"
+                    android:paddingHorizontal="8dp"
+                    android:src="@drawable/ic_menu"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/brown" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </com.google.android.material.appbar.AppBarLayout>
 
@@ -41,39 +73,83 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+            app:layout_constraintTop_toBottomOf="@id/AppBarLayout">
 
             <ImageView
                 android:id="@+id/logo"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                android:layout_marginTop="120dp"
                 android:contentDescription="@string/logo_description"
                 android:src="@drawable/logo_didi_dark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/email_input"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/email_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:autofillHints="email"
-                android:background="@drawable/textfield_background"
-                android:hint="@string/email_hint"
-                android:inputType="textEmailAddress"
-                android:shadowColor="@color/brown"
-                android:textColor="@color/brown"
-                android:textColorHighlight="@color/brown"
-                android:textColorHint="@color/brown"
-                android:textSize="25sp"
-                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/gray"
+                app:cardCornerRadius="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/logo" />
+                app:layout_constraintTop_toBottomOf="@id/logo">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/email_lbl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/email_lbl"
+                        android:textColor="@color/brown"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/email_input"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="8dp"
+                        android:autofillHints="emailAddress"
+                        android:background="@android:color/transparent"
+                        android:drawableEnd="@drawable/ic_email"
+                        android:drawableTint="@color/brown"
+                        android:hint="@string/email_hint"
+                        android:inputType="textEmailAddress"
+                        android:paddingHorizontal="0dp"
+                        android:paddingVertical="4dp"
+                        android:textColor="@color/brown"
+                        android:textColorHighlight="@android:color/transparent"
+                        android:textColorHint="@color/brown"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/email_lbl" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:backgroundTint="@color/brown"
+                        app:cardCornerRadius="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
 
             <Button
                 android:id="@+id/register_btn"
@@ -82,16 +158,15 @@
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_background"
                 android:backgroundTint="@color/brown"
-                android:text="@string/entrar"
+                android:paddingHorizontal="40dp"
+                android:paddingVertical="10dp"
+                android:text="@string/recover_btn"
                 android:textColor="@color/yellow"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textAllCaps="false"
-                android:paddingHorizontal="40dp"
-                android:paddingVertical="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/email_input" />
+                app:layout_constraintTop_toBottomOf="@+id/email_card" />
 
             <ProgressBar
                 android:id="@+id/progress_bar"

@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.example.app_didi_lanches.R
 import com.example.app_didi_lanches.databinding.FragmentRecoverBinding
-import com.example.app_didi_lanches.databinding.FragmentRegisterBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -38,6 +36,10 @@ class RecoverFragment : Fragment() {
         binding.registerBtn.setOnClickListener {
             binding.progressBar.visibility = View.VISIBLE
             validateData()
+        }
+
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 

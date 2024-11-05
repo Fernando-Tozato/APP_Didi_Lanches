@@ -5,8 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.app_didi_lanches.R
 import com.example.app_didi_lanches.databinding.FragmentHomeBinding
-import com.example.app_didi_lanches.databinding.FragmentLoginBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -32,7 +33,26 @@ class HomeFragment : Fragment() {
     }
 
     private fun initClicks() {
+        binding.btnInventory.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_inventoryFragment)
+        }
 
+        binding.btnViewCategories.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_viewCategoryFragment)
+        }
+
+        binding.btnNewProducts.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_newProductFragment)
+        }
+
+        binding.btnNewCategory.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_newCategoryFragment)
+        }
+
+        binding.btnLogout.setOnClickListener {
+            auth.signOut()
+            findNavController().navigate(R.id.action_homeFragment_to_authentication)
+        }
     }
 
     override fun onDestroyView() {

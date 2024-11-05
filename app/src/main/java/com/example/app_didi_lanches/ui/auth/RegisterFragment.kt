@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.app_didi_lanches.R
-import com.example.app_didi_lanches.databinding.FragmentLoginBinding
 import com.example.app_didi_lanches.databinding.FragmentRegisterBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -39,6 +38,10 @@ class RegisterFragment : Fragment() {
             binding.progressBar.visibility = View.VISIBLE
             validateData()
         }
+
+        binding.btnBack.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun validateData() {
@@ -60,7 +63,7 @@ class RegisterFragment : Fragment() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    findNavController().navigate(R.id.action_registerFragment_to_homeFragment)
+                    findNavController().navigate(R.id.action_global_homeFragment)
                 } else {
                     binding.progressBar.visibility = View.INVISIBLE
                 }

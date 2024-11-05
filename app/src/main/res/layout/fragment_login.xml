@@ -23,43 +23,131 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/email_input"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/email_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints="email"
-            android:background="@drawable/textfield_background"
-            android:hint="@string/email_hint"
-            android:inputType="textEmailAddress"
-            android:shadowColor="@color/brown"
-            android:textColor="@color/brown"
-            android:textColorHighlight="@color/brown"
-            android:textColorHint="@color/brown"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/gray"
+            app:cardCornerRadius="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logo" />
+            app:layout_constraintTop_toBottomOf="@id/logo">
 
-        <EditText
-            android:id="@+id/password_input"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/email_lbl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/email_lbl"
+                    android:textColor="@color/brown"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/email_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:autofillHints="emailAddress"
+                    android:background="@android:color/transparent"
+                    android:drawableEnd="@drawable/ic_email"
+                    android:drawableTint="@color/brown"
+                    android:hint="@string/email_hint"
+                    android:inputType="textEmailAddress"
+                    android:paddingHorizontal="0dp"
+                    android:paddingVertical="4dp"
+                    android:textColor="@color/brown"
+                    android:textColorHighlight="@android:color/transparent"
+                    android:textColorHint="@color/brown"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/email_lbl" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:backgroundTint="@color/brown"
+                    app:cardCornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/password_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:autofillHints="password"
-            android:background="@drawable/textfield_background"
-            android:hint="@string/password_hint"
-            android:inputType="textPassword"
-            android:shadowColor="@color/brown"
-            android:textColor="@color/brown"
-            android:textColorHighlight="@color/brown"
-            android:textColorHint="@color/brown"
-            android:textSize="25sp"
-            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/gray"
+            app:cardCornerRadius="5dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email_input" />
+            app:layout_constraintTop_toBottomOf="@id/email_card">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/password_lbl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:text="@string/password_lbl"
+                    android:textColor="@color/brown"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/password_input"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="8dp"
+                    android:background="@android:color/transparent"
+                    android:drawableEnd="@drawable/ic_password"
+                    android:drawableTint="@color/brown"
+                    android:hint="@string/password_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="textPassword"
+                    android:paddingHorizontal="0dp"
+                    android:paddingVertical="4dp"
+                    android:textColor="@color/brown"
+                    android:textColorHighlight="@android:color/transparent"
+                    android:textColorHint="@color/brown"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/password_lbl" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:backgroundTint="@color/brown"
+                    app:cardCornerRadius="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
 
         <Button
             android:id="@+id/login_btn"
@@ -68,7 +156,7 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_background"
             android:backgroundTint="@color/brown"
-            android:text="@string/entrar"
+            android:text="@string/login_btn"
             android:textColor="@color/yellow"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -77,7 +165,7 @@
             android:paddingHorizontal="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_input" />
+            app:layout_constraintTop_toBottomOf="@+id/password_card" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/register_recover_layout"
@@ -104,9 +192,9 @@
                 android:id="@+id/recover_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/recover_btn"
+                android:text="@string/recover_lbl"
                 android:textColor="@color/brown"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"

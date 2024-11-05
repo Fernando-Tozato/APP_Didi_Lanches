@@ -1,21 +1,61 @@
 <resources>
-    <string name="app_name">Didi APP</string>
-    <string name="entrar">ENTRAR</string>
-    <string name="usuario">Usuário</string>
-    <string name="senha">Senha</string>
-    <string name="logo_description">Logo Didi Lanches</string>
-    <string name="username_hint">Username</string>
-    <string name="password_hint">Password</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="email_hint">Email</string>
-    <string name="register_btn">Criar conta</string>
-    <string name="recover_btn">Esqueci minha senha</string>
-    <string name="recover_lbl">Recuperar conta\n</string>
+    <!--  AUTHENTICATION  -->
+    <!--  Labels  -->
+    <string name="email_lbl">E-mail</string>
+    <string name="password_lbl">Senha</string>
     <string name="register_lbl">Criar conta</string>
-    <string name="inventory">Estoque</string>
-    <string name="new_categories">Criar categorias</string>
-    <string name="view_categories">Análise de categorias</string>
-    <string name="new_products">Inserção de produtos</string>
-    <string name="logout">Sair</string>
+    <string name="recover_lbl">Esqueci minha senha</string>
+
+    <!--  Hints  -->
+    <string name="email_hint">email@email.com</string>
+    <string name="password_hint">*****</string>
+
+    <!--  Buttons  -->
+    <string name="login_btn">Entrar</string>
+    <string name="register_btn">Criar conta</string>
+    <string name="recover_btn">Recuperar conta</string>
+    <string name="logout_btn">Sair</string>
+
+
+
+    <!--  HOME  -->
+    <!--  Labels  -->
+    <string name="loading_inventory_lbl">Carregando produtos …</string>
+    <string name="loading_category_lbl">Carregando categorias …</string>
+    <string name="category_lbl">Categoria</string>
+
+    <!--  Hints  -->
+    <string name="category_hint">Ex: Ingrediente</string>
+
+    <!--  Buttons  -->
+    <string name="inventory_btn">Estoque</string>
+    <string name="new_category_btn">Criar categoria</string>
+    <string name="view_categories_btn">Categorias</string>
+    <string name="new_products_btn">Inserção de produtos</string>
+
+    <!--  Descriptions  -->
+    <string name="menu_btn_description">Menu</string>
+    <string name="add_product_fab_description">Add product</string>
+    <string name="add_category_fab_description">Adicionar categoria</string>
+
+
+
+    <!--  OTHERS  -->
+    <!--  Labels  -->
+    <string name="app_name_lbl">Didi APP</string>
+
+    <!--  Hints  -->
+
+    <!--  Buttons  -->
+
+    <!--  Descriptions  -->
+    <string name="logo_description">Logo Didi Lanches</string>
+    <string name="back_btn_description">Voltar</string>
+    <string name="color_lbl">Cor</string>
+    <string name="cancel_btn">Cancelar</string>
+    <string name="confirm_btn">Confirmar</string>
+
+
+    <!--  New Strings  -->
+
 </resources>
