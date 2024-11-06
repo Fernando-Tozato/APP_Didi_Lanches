@@ -23,38 +23,51 @@
     <string name="loading_inventory_lbl">Carregando produtos …</string>
     <string name="loading_category_lbl">Carregando categorias …</string>
     <string name="category_lbl">Categoria</string>
+    <string name="color_lbl">Cor</string>
+    <string name="product_lbl">Produto</string>
+    <string name="quantity_lbl">Quantidade</string>
+    <string name="measure_lbl">Medida</string>
+
 
     <!--  Hints  -->
     <string name="category_hint">Ex: Ingrediente</string>
+    <string name="product_hint">Ex: Farinha</string>
+    <string name="quantity_hint">Ex: 1000</string>
 
     <!--  Buttons  -->
-    <string name="inventory_btn">Estoque</string>
+    <string name="inventory_btn">Ver estoque</string>
+    <string name="view_categories_btn">Ver categorias</string>
+    <string name="new_products_btn">Adicionar produto</string>
     <string name="new_category_btn">Criar categoria</string>
-    <string name="view_categories_btn">Categorias</string>
-    <string name="new_products_btn">Inserção de produtos</string>
+    <string name="cancel_btn">Cancelar</string>
+    <string name="confirm_btn">Confirmar</string>
 
     <!--  Descriptions  -->
     <string name="menu_btn_description">Menu</string>
     <string name="add_product_fab_description">Add product</string>
     <string name="add_category_fab_description">Adicionar categoria</string>
+    <string name="logo_description">Logo Didi Lanches</string>
+    <string name="back_btn_description">Voltar</string>
 
 
 
     <!--  OTHERS  -->
     <!--  Labels  -->
     <string name="app_name_lbl">Didi APP</string>
+    <string-array name="unit_options">
+        <item>un</item>
+        <item>dz</item>
+        <item>kg</item>
+        <item>g</item>
+        <item>l</item>
+        <item>ml</item>
+    </string-array>
 
     <!--  Hints  -->
 
     <!--  Buttons  -->
 
     <!--  Descriptions  -->
-    <string name="logo_description">Logo Didi Lanches</string>
-    <string name="back_btn_description">Voltar</string>
-    <string name="color_lbl">Cor</string>
-    <string name="cancel_btn">Cancelar</string>
-    <string name="confirm_btn">Confirmar</string>
-
 
     <!--  New Strings  -->
 

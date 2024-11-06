@@ -83,17 +83,28 @@
         <action
             android:id="@+id/action_inventoryFragment_to_newProductFragment"
             app:destination="@id/newProductFragment" />
+        <action
+            android:id="@+id/action_inventoryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/newCategoryFragment"
         android:name="com.example.app_didi_lanches.ui.NewCategoryFragment"
         android:label="fragment_new_category"
-        tools:layout="@layout/fragment_new_category" />
+        tools:layout="@layout/fragment_new_category" >
+        <action
+            android:id="@+id/action_newCategoryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/newProductFragment"
         android:name="com.example.app_didi_lanches.ui.NewProductFragment"
         android:label="fragment_new_product"
-        tools:layout="@layout/fragment_new_product" />
+        tools:layout="@layout/fragment_new_product" >
+        <action
+            android:id="@+id/action_newProductFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/viewCategoryFragment"
         android:name="com.example.app_didi_lanches.ui.ViewCategoryFragment"
@@ -102,5 +113,8 @@
         <action
             android:id="@+id/action_viewCategoryFragment_to_newCategoryFragment"
             app:destination="@id/newCategoryFragment" />
+        <action
+            android:id="@+id/action_viewCategoryFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="50dp"
-    android:layout_height="50dp"
-    android:layout_margin="4dp">
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:layout_margin="5dp">
 
-    <View
+    <Button
         android:id="@+id/colorView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="?attr/selectableItemBackground" />
+        android:background="@drawable/circle_background"/>
+
+    <View
+        android:id="@+id/highlightView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/circle_highlight"
+        android:visibility="invisible"
+        android:elevation="8dp"/>
 
 </FrameLayout>
