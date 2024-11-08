@@ -8,7 +8,7 @@ import com.example.app_didi_lanches.helper.FirebaseHelper
 data class Category(
     var id: String = "",
     var name: String = "",
-    var color: Int = 0
+    var color: String = ""
 ) : Parcelable {
     init {
         this.id = FirebaseHelper.getDatabase().push().key ?: ""

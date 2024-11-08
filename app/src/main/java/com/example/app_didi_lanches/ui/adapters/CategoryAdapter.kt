@@ -2,6 +2,7 @@ package com.example.app_didi_lanches.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -35,17 +36,14 @@ class CategoryAdapter(
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val category = categoryList[position]
 
-        if (category.color in listOf(ContextCompat.getColor(context, R.color.category05),
-                ContextCompat.getColor(context, R.color.category06),
-                ContextCompat.getColor(context, R.color.category08))){
-
+        if (category.color in listOf("#704214", "#7B3F00", "#7E3B3A")){
             holder.binding.nameLbl.setTextColor(ContextCompat.getColor(context, R.color.yellow))
         } else {
             holder.binding.nameLbl.setTextColor(ContextCompat.getColor(context, R.color.brown))
         }
 
         holder.binding.nameLbl.text = category.name
-        holder.binding.colorCard.setBackgroundColor(category.color)
+        holder.binding.colorCard.setBackgroundColor(Color.parseColor(category.color))
 
         holder.binding.btnEdit.setOnClickListener { categorySelected(category, SELECT_EDIT) }
         holder.binding.btnDelete.setOnClickListener { categorySelected(category, SELECT_DELETE) }

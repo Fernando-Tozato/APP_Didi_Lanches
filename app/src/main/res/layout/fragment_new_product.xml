@@ -236,6 +236,7 @@
                         android:id="@+id/measure_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:padding="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/measure_lbl" />
@@ -285,6 +286,7 @@
                         android:id="@+id/category_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:padding="8dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/category_lbl" />
@@ -327,7 +329,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/btn_confirm"
                 app:layout_constraintStart_toEndOf="@+id/btn_cancel"
-                app:layout_constraintTop_toBottomOf="@@id/category_card" />
+                app:layout_constraintTop_toBottomOf="@id/category_card" />
 
             <Button
                 android:id="@+id/btn_confirm"

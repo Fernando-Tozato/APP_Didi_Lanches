@@ -1,8 +1,6 @@
 package com.example.app_didi_lanches.model
 
 import android.os.Parcelable
-import androidx.core.content.ContextCompat
-import com.example.app_didi_lanches.R
 import kotlinx.parcelize.Parcelize
 import com.example.app_didi_lanches.helper.FirebaseHelper
 
@@ -12,7 +10,7 @@ data class Product(
     var name: String = "",
     var quantity: Double = 0.0,
     var measure: String = "",
-    var category: Category? = null
+    var category: String = ""
 ) : Parcelable {
     init {
         this.id = FirebaseHelper.getDatabase().push().key ?: ""

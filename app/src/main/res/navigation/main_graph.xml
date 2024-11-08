@@ -95,6 +95,9 @@
         <action
             android:id="@+id/action_newCategoryFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_newCategoryFragment_to_viewCategoryFragment"
+            app:destination="@id/viewCategoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/newProductFragment"
@@ -104,6 +107,9 @@
         <action
             android:id="@+id/action_newProductFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_newProductFragment_to_inventoryFragment"
+            app:destination="@id/inventoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/viewCategoryFragment"

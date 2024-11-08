@@ -1,12 +1,12 @@
 package com.example.app_didi_lanches.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.app_didi_lanches.R
@@ -58,24 +58,23 @@ class ViewCategoryFragment : Fragment() {
         FirebaseHelper
             .getDatabase()
             .child("category")
-            .child(FirebaseHelper.getIdUser().toString() ?: "")
+            .child(FirebaseHelper.getIdUser().toString())
             .addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    if (snapshot.exists()) {
-                        categoryList.clear()
-
-                        for (snap in snapshot.children) {
-                            val category = snap.getValue(Category::class.java) as Category
-                            Log.d("debug_adapter", "$category")
-                            categoryList.add(category)
+                    if (view != null && viewLifecycleOwner.lifecycle.currentState.isAtLeast(Lifecycle.State.STARTED)) {
+                        if (snapshot.exists()) {
+                            categoryList.clear()
+                            for (snap in snapshot.children) {
+                                val category = snap.getValue(Category::class.java) as Category
+                                categoryList.add(category)
+                            }
+                            binding.progressBar.visibility = View.INVISIBLE
+                            binding.loadingText.text = ""
+                            initAdapter()
+                        } else {
+                            binding.progressBar.visibility = View.INVISIBLE
+                            binding.loadingText.text = "Nenhuma categoria cadastrada."
                         }
-
-                        binding.progressBar.visibility = View.INVISIBLE
-                        binding.loadingText.text = ""
-                        initAdapter()
-                    } else {
-                        binding.progressBar.visibility = View.INVISIBLE
-                        binding.loadingText.text = "Nenhuma tarefa cadastrada."
                     }
                 }
 

@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.app_didi_lanches.R
@@ -21,7 +20,7 @@ class NewCategoryFragment : Fragment() {
     private var _binding: FragmentNewCategoryBinding? = null
     private val binding get() = _binding!!
 
-    private var selectedColor: Int = 0
+    private var selectedColor: String = ""
 
     private lateinit var category: Category
     private var newCategory: Boolean = true
@@ -41,34 +40,31 @@ class NewCategoryFragment : Fragment() {
 
     private fun loadPage() {
         val colors = listOf(
-            ContextCompat.getColor(requireContext(), R.color.category01),
-            ContextCompat.getColor(requireContext(), R.color.category02),
-            ContextCompat.getColor(requireContext(), R.color.category03),
-            ContextCompat.getColor(requireContext(), R.color.category04),
-            ContextCompat.getColor(requireContext(), R.color.category05),
-            ContextCompat.getColor(requireContext(), R.color.category06),
-            ContextCompat.getColor(requireContext(), R.color.category07),
-            ContextCompat.getColor(requireContext(), R.color.category08),
-            ContextCompat.getColor(requireContext(), R.color.category09),
-            ContextCompat.getColor(requireContext(), R.color.category10),
-            ContextCompat.getColor(requireContext(), R.color.category11),
-            ContextCompat.getColor(requireContext(), R.color.category12),
-            ContextCompat.getColor(requireContext(), R.color.category13),
-            ContextCompat.getColor(requireContext(), R.color.category14),
-            ContextCompat.getColor(requireContext(), R.color.category15),
-            ContextCompat.getColor(requireContext(), R.color.category16),
-            ContextCompat.getColor(requireContext(), R.color.category17),
-            ContextCompat.getColor(requireContext(), R.color.category18)
+            "#F5F5DC",
+            "#D2B48C",
+            "#C68A3C",
+            "#D19A6A",
+            "#704214",
+            "#7B3F00",
+            "#C7513A",
+            "#7E3B3A",
+            "#E27D60",
+            "#556B2F",
+            "#228B22",
+            "#8B8B00",
+            "#6A7B8A",
+            "#3A5B7F",
+            "#5B7F91",
+            "#5C4D83",
+            "#7E5B9D",
+            "#6A4C93"
         )
 
+
         binding.colorRC.layoutManager = GridLayoutManager(requireContext(), 6)
-        binding.colorRC.adapter = ColorAdapter(colors) { selectedColor ->
+        binding.colorRC.adapter = ColorAdapter(requireContext(), colors) { selectedColor ->
             this.selectedColor = selectedColor
         }
-
-        /*if (!this.newCategory) {
-            binding.categoryInput.text = category.name
-        }*/
     }
 
     private fun initClicks() {
@@ -92,7 +88,7 @@ class NewCategoryFragment : Fragment() {
     private fun validateData() {
         val name = binding.categoryInput.text.toString().trim()
 
-        if (name.isEmpty() && selectedColor == 0){
+        if (name.isEmpty() && selectedColor.isEmpty()){
             Toast.makeText(requireContext(), "Preencha todos os campos.", Toast.LENGTH_SHORT).show()
         } else {
             binding.progressBar.visibility = View.VISIBLE
@@ -116,7 +112,7 @@ class NewCategoryFragment : Fragment() {
                 if (task.isSuccessful) {
                     if (newCategory) {
                         binding.progressBar.visibility = View.INVISIBLE
-                        findNavController().popBackStack()
+                        findNavController().navigate(R.id.action_newCategoryFragment_to_viewCategoryFragment)
                         Toast.makeText(
                             requireContext(),
                             "Categoria salva com sucesso.",
@@ -124,7 +120,7 @@ class NewCategoryFragment : Fragment() {
                         ).show()
                     } else {
                         binding.progressBar.visibility = View.INVISIBLE
-                        findNavController().popBackStack()
+                        findNavController().navigate(R.id.action_newCategoryFragment_to_viewCategoryFragment)
                         Toast.makeText(
                             requireContext(),
                             "Categoria atualizada com sucesso.",

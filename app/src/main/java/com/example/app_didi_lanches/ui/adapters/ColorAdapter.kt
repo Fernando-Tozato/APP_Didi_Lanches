@@ -1,16 +1,20 @@
 package com.example.app_didi_lanches.ui.adapters
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.ColorStateList
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.app_didi_lanches.databinding.AdapterColorBinding
 
 class ColorAdapter(
-    private val colors: List<Int>,
-    private val onColorSelected: (Int) -> Unit
+    private val context: Context,
+    private val colors: List<String>,
+    private val onColorSelected: (String) -> Unit
 ) : RecyclerView.Adapter<ColorAdapter.ColorViewHolder>() {
 
     private var selectedPosition = -1
@@ -29,7 +33,7 @@ class ColorAdapter(
     override fun onBindViewHolder(holder: ColorViewHolder, @SuppressLint("RecyclerView") position: Int) {
         val color = colors[position]
 
-        holder.binding.colorView.backgroundTintList = ColorStateList.valueOf(color)
+        holder.binding.colorView.backgroundTintList = ColorStateList.valueOf(Color.parseColor(color))
 
         if (position == selectedPosition) {
             holder.binding.highlightView.visibility = View.VISIBLE
