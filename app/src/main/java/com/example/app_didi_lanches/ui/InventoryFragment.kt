@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.app_didi_lanches.R
 import com.example.app_didi_lanches.databinding.FragmentInventoryBinding
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -16,8 +17,6 @@ class InventoryFragment : Fragment() {
     private var _binding: FragmentInventoryBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var auth: FirebaseAuth
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View {
         _binding = FragmentInventoryBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -26,14 +25,20 @@ class InventoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        auth = Firebase.auth
-
         initClicks()
     }
 
     private fun initClicks() {
         binding.btnBack.setOnClickListener {
             findNavController().popBackStack()
+        }
+
+        binding.btnMenu.setOnClickListener {
+            findNavController().navigate(R.id.action_inventoryFragment_to_homeFragment)
+        }
+
+        binding.addProduct.setOnClickListener {
+            findNavController().navigate(R.id.action_inventoryFragment_to_newProductFragment)
         }
     }
 

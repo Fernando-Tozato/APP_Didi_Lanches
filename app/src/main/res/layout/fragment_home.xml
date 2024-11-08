@@ -55,7 +55,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="32dp"
             android:paddingVertical="15dp"
-            android:text="@string/new_products_btn"
+            android:text="@string/new_product_btn"
             android:textColor="@color/yellow"
             android:textSize="17sp"
             android:textStyle="bold"

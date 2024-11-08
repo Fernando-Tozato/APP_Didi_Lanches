@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.app_didi_lanches.R
 import com.example.app_didi_lanches.databinding.FragmentRegisterBinding
+import com.example.app_didi_lanches.helper.FirebaseHelper
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -65,6 +66,11 @@ class RegisterFragment : Fragment() {
                 if (task.isSuccessful) {
                     findNavController().navigate(R.id.action_global_homeFragment)
                 } else {
+                    Toast.makeText(
+                        requireContext(),
+                        FirebaseHelper.validError(task.exception?.message ?: ""),
+                        Toast.LENGTH_SHORT
+                    ).show()
                     binding.progressBar.visibility = View.INVISIBLE
                 }
             }

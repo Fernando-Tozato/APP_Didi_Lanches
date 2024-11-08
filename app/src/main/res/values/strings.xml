@@ -16,6 +16,13 @@
     <string name="recover_btn">Recuperar conta</string>
     <string name="logout_btn">Sair</string>
 
+    <!--  Responses  -->
+    <string name="invalid_credentials">E-mail ou senha inválidos.</string>
+    <string name="invalid_email">Insira um e-mail válido.</string>
+    <string name="email_in_use">Este email já foi registrado.</string>
+    <string name="weak_password">Insira uma senha mais forte.</string>
+    <string name="other_errors">Ocorreu um erro ao autenticar sua conta. Tente novamente mais tarde.</string>
+
 
 
     <!--  HOME  -->
@@ -37,7 +44,7 @@
     <!--  Buttons  -->
     <string name="inventory_btn">Ver estoque</string>
     <string name="view_categories_btn">Ver categorias</string>
-    <string name="new_products_btn">Adicionar produto</string>
+    <string name="new_product_btn">Adicionar produto</string>
     <string name="new_category_btn">Criar categoria</string>
     <string name="cancel_btn">Cancelar</string>
     <string name="confirm_btn">Confirmar</string>

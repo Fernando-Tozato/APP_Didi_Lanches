@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.app_didi_lanches.databinding.FragmentRecoverBinding
+import com.example.app_didi_lanches.helper.FirebaseHelper
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -58,8 +59,14 @@ class RecoverFragment : Fragment() {
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
                     Toast.makeText(requireContext(), "Email enviado com sucesso.", Toast.LENGTH_SHORT).show()
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        FirebaseHelper.validError(task.exception?.message ?: ""),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    binding.progressBar.visibility = View.INVISIBLE
                 }
-                binding.progressBar.visibility = View.INVISIBLE
             }
     }
 
