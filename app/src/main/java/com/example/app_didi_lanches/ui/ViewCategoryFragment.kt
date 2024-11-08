@@ -89,11 +89,34 @@ class ViewCategoryFragment : Fragment() {
         binding.categoryRV.layoutManager = LinearLayoutManager(requireContext())
         binding.categoryRV.setHasFixedSize(true)
 
-        categoryAdapter = CategoryAdapter(requireContext(), categoryList) { category, int ->
-
+        categoryAdapter = CategoryAdapter(requireContext(), categoryList) { category, select ->
+            optionSelect(category, select)
         }
 
         binding.categoryRV.adapter = categoryAdapter
+    }
+
+    private fun optionSelect(category: Category, select: Int) {
+        when (select) {
+            CategoryAdapter.SELECT_DELETE -> {
+                deleteCategory(category)
+            }
+
+            CategoryAdapter.SELECT_EDIT -> {
+            }
+        }
+    }
+
+    private fun deleteCategory(category: Category) {
+        FirebaseHelper
+            .getDatabase()
+            .child("category")
+            .child(FirebaseHelper.getIdUser().toString())
+            .child(category.id)
+            .removeValue()
+
+        categoryList.remove(category)
+        categoryAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

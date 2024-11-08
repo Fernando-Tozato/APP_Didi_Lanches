@@ -92,11 +92,39 @@ class InventoryFragment : Fragment() {
         binding.inventoryRV.layoutManager = LinearLayoutManager(requireContext())
         binding.inventoryRV.setHasFixedSize(true)
 
-        productAdapter = ProductAdapter(requireContext(), productList) { product, int ->
-
+        productAdapter = ProductAdapter(requireContext(), productList) { product, select ->
+            optionSelect(product, select)
         }
 
         binding.inventoryRV.adapter = productAdapter
+    }
+
+    private fun optionSelect(product: Product, select: Int) {
+        when (select) {
+            ProductAdapter.SELECT_DELETE -> {
+                deleteProduct(product)
+            }
+
+            ProductAdapter.SELECT_EDIT -> {
+                editProduct(product)
+            }
+        }
+    }
+
+    private fun editProduct(product: Product) {
+
+    }
+
+    private fun deleteProduct(product: Product) {
+        FirebaseHelper
+            .getDatabase()
+            .child("product")
+            .child(FirebaseHelper.getIdUser().toString())
+            .child(product.id)
+            .removeValue()
+
+        productList.remove(product)
+        productAdapter.notifyDataSetChanged()
     }
 
     override fun onDestroyView() {

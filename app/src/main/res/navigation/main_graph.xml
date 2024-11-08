@@ -98,6 +98,10 @@
         <action
             android:id="@+id/action_newCategoryFragment_to_viewCategoryFragment"
             app:destination="@id/viewCategoryFragment" />
+        <argument
+            android:name="Category"
+            app:argType="com.example.app_didi_lanches.model.Category"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/newProductFragment"
@@ -110,6 +114,10 @@
         <action
             android:id="@+id/action_newProductFragment_to_inventoryFragment"
             app:destination="@id/inventoryFragment" />
+        <argument
+            android:name="Product"
+            app:argType="com.example.app_didi_lanches.model.Product"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/viewCategoryFragment"

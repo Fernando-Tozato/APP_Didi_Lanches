@@ -25,6 +25,8 @@ class NewCategoryFragment : Fragment() {
     private lateinit var category: Category
     private var newCategory: Boolean = true
 
+    private lateinit var colorAdapter: ColorAdapter
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,savedInstanceState: Bundle?): View {
         _binding = FragmentNewCategoryBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -40,31 +42,17 @@ class NewCategoryFragment : Fragment() {
 
     private fun loadPage() {
         val colors = listOf(
-            "#F5F5DC",
-            "#D2B48C",
-            "#C68A3C",
-            "#D19A6A",
-            "#704214",
-            "#7B3F00",
-            "#C7513A",
-            "#7E3B3A",
-            "#E27D60",
-            "#556B2F",
-            "#228B22",
-            "#8B8B00",
-            "#6A7B8A",
-            "#3A5B7F",
-            "#5B7F91",
-            "#5C4D83",
-            "#7E5B9D",
-            "#6A4C93"
+            "#F5F5DC", "#D2B48C", "#C68A3C", "#D19A6A", "#704214", "#7B3F00",
+            "#C7513A", "#7E3B3A", "#E27D60", "#556B2F", "#228B22", "#8B8B00",
+            "#6A7B8A", "#3A5B7F", "#5B7F91", "#5C4D83", "#7E5B9D", "#6A4C93"
         )
 
 
         binding.colorRC.layoutManager = GridLayoutManager(requireContext(), 6)
-        binding.colorRC.adapter = ColorAdapter(requireContext(), colors) { selectedColor ->
+        colorAdapter = ColorAdapter(requireContext(), colors) { selectedColor ->
             this.selectedColor = selectedColor
         }
+        binding.colorRC.adapter = colorAdapter
     }
 
     private fun initClicks() {
